@@ -1,6 +1,6 @@
-# Project Name
+# Space Work (Team Hasselback)
 
-> Project description
+> Proxy server to hold all services
 
 ## Related Projects
 
@@ -17,7 +17,9 @@
 
 ## Usage
 
-> Some usage instructions
+> Install components and run with ```sh
+npm run start
+```
 
 ## Requirements
 
