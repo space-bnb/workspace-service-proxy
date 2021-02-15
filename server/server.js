@@ -8,7 +8,7 @@ app.use('/', express.static(__dirname + '/../client/dist'));
 
 app.get('/workspace-api/workspace/:id', async function(req, res) {
   const { id } = req.params;
-  const { data } = await axios.get(`http://localhost:4001/workspace-api/workspace/${id}`);
+  const { data } = await axios.get(`http://54.193.132.156:4001/workspace-api/workspace/${id}`);
   res.json(data);
 });
 
