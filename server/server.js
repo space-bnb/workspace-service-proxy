@@ -54,6 +54,12 @@ app.get('/api/nearbyworkspaces/address/:id', async function(req, res) {
   res.json(data);
 });
 
+app.get('/api/nearbyworkspaces/buildings/:id', async function(req, res) {
+  const { id } = req.params;
+  const { data } = await axios.get(`http://ec2-54-177-170-134.us-west-1.compute.amazonaws.com:5001/api/nearbyworkspaces/buildings/${id}`);
+  res.json(data);
+});
+
 app.get('/favicon.ico', (req, res) => res.end());
 
 module.exports = app;
