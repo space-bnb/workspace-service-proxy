@@ -8,7 +8,7 @@ app.use('/', express.static(__dirname + '/../client/dist'));
 
 app.get('/workspace-api/workspace/:id', async function(req, res) {
   const { id } = req.params;
-  const { data } = await axios.get(`http://54.193.132.156:4001/workspace-api/workspace/${id}`);
+  const { data } = await axios.get(`http://54.193.132.156:4000/workspace-api/workspace/${id}`);
   res.json(data);
 });
 
@@ -18,11 +18,23 @@ app.get('/api/availability', async function(req, res) {
   res.json(data);
 });
 
+app.get('/api/photos/:id', async function(req, res) {
+  const { id } = req.params;
+  const { data } = await axios.get(`http://54.151.43.93:6001/api/photos/${id}`);
+  res.json(data);
+});
+
+app.get('/api/photos/workspace/:id', async function(req, res) {
+  const { id } = req.params;
+  const { data } = await axios.get(`http://54.151.43.93:6001/api/photos/workspace/${id}`);
+  res.json(data);
+});
+
 app.get('/api/workspace-description/:id', async function(req, res) {
   const { id } = req.params;
-  const { data } = await axios.get(`http://localhost:6060/api/workspace-description/${id}`);
+  const { data } = await axios.get(`http://54.151.43.93:6060/api/workspace-description/${id}`);
   res.json(data);
-})
+});
 
 app.get('/favicon.ico', (req, res) => res.end());
 
