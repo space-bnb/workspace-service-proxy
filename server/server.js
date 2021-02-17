@@ -42,6 +42,18 @@ app.get('/api/workspace-description/:id', async function(req, res) {
   res.json(data);
 });
 
+app.get('/api/nearbyworkspaces/:id', async function(req, res) {
+  const { id } = req.params;
+  const { data } = await axios.get(`http://ec2-54-177-170-134.us-west-1.compute.amazonaws.com:5001/api/nearbyworkspaces/${id}`);
+  res.json(data);
+});
+
+app.get('/api/nearbyworkspaces/address/:id', async function(req, res) {
+  const { id } = req.params;
+  const { data } = await axios.get(`http://ec2-54-177-170-134.us-west-1.compute.amazonaws.com:5001/api/nearbyworkspaces/address/${id}`);
+  res.json(data);
+});
+
 app.get('/favicon.ico', (req, res) => res.end());
 
 module.exports = app;
