@@ -14,7 +14,13 @@ app.get('/workspace-api/workspace/:id', async function(req, res) {
 
 app.get('/api/availability', async function(req, res) {
   const { id } = req.query;
-  const { data } = await axios.get(`http://localhost:3001/api/availability?id=${id}`);
+  const { data } = await axios.get(`http://http://3.140.156.174:3001/api/availability?id=${id}`);
+  res.json(data);
+});
+
+app.get('/api/getNearbyTransitOptions', async function(req, res) {
+  const { id } = req.query;
+  const { data } = await axios.get(`http://http://3.140.156.174:3002/api/availability?id=${id}`);
   res.json(data);
 });
 
