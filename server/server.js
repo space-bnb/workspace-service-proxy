@@ -12,6 +12,12 @@ app.get('/workspace-api/workspace/:id', async function(req, res) {
   res.json(data);
 });
 
+app.get('/api/amenities-api/amenity/:id', async function(req, res) {
+  const { id } = req.params;
+  const { data } = await axios.get(`http://54.219.57.231:4002/amenities-api/amenity/${id}`);
+  res.json(data);
+});
+
 app.get('/api/availability', async function(req, res) {
   const { id } = req.query;
   const { data } = await axios.get(`http://3.140.156.174:3001/api/availability?id=${id}`);
